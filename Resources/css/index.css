@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "Minecraft";
+  src: url(./font/minecraft_font.ttf) format("TrueType");
+}
+
+body {
+  font-family: 'Minecraft';
+  margin:0;
+  padding:0;
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+section {
+  padding-top: 50px;
+}
+
+#syllabus, #gallery, #tools {
+  float: left;
+  width: 60px;
+}
+
+#portals, #map, #cactus {
+  float: right;
+  width: 60px;
+}
+
+.header {
+  overflow: hidden;
+  background-color: rgba(250, 250, 250, 0.95);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.nav {
+  align-items: center;
+  width: min(1024px, 100vw);
+  margin: auto;
+}
+
+.menu {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.menu:hover {
+  filter: drop-shadow(2px 2px 2px rgba(10, 10, 10, 0.5));
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#logo {
+  float: inherit;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  filter: drop-shadow(0px 4px 4px gray);
+}
+
+@media screen and (max-width: 1024px) {
+  .menu {
+    --a: calc(100vw - 800px);
+    --b: calc(var(--a) / 224);
+    --c: calc(var(--b) * 15);
+    padding-left: var(--c);
+    padding-right: var(--c);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .nav {
+    width: 80vw;
+    margin: auto;
+  }
+
+  .menu {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  #syllabus, #gallery, #tools {
+    padding-top: 60px;
+    display: inline-block;
+    width: 33.3%;
+    margin: auto;
+  }
+
+  #portals, #map, #cactus {
+    padding-top: 10px;
+    display: inline-block;
+    width: 33.3%;
+    margin: auto;
+  }
+
+
+}
