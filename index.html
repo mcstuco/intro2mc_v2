@@ -20,9 +20,24 @@
             var userInput = document.getElementById("keyword").value;
             window.open('https://minecraft.gamepedia.com/' + userInput);
         }
+        function dp_open() {
+          document.getElementById("dp_close").style.display = "none";
+          document.getElementById("dp_close").style.opacity = "0";
+          document.getElementById("dp_open").style.display = "inline";
+          document.getElementById("dp_open").style.opacity = "1";
+          document.getElementById("header").style.height = "170px";
+        }
+        function dp_close() {
+          document.getElementById("dp_open").style.display = "none";
+          document.getElementById("dp_open").style.opacity = "0";
+          document.getElementById("dp_close").style.display = "inline";
+          document.getElementById("dp_close").style.opacity = "1";
+          document.getElementById("header").style.height = "44px";
+        }
     </script>
 
-    <div class="header">
+
+    <div class="header" id="header">
       <div class="menu" id="logo">
         <img src="./Resources/img/logo.png" height="55">
       </div>
