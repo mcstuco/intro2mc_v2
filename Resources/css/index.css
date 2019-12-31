@@ -1,154 +1,177 @@
 @font-face {
-  font-family: "Minecraft";
-  src: url(./font/minecraft_font.ttf) format("TrueType");
+  font-family: 'Minecraft';
+  src: url('./font/minecraft_font.ttf') format('TrueType');
+}
+
+@viewport {
+  width: device-width;
+  zoom: 1.0;
 }
 
 body {
   font-family: 'Minecraft';
   margin:0;
   padding:0;
+  min-width: 320px;
 }
 
 footer {
+  position: relative;
   bottom: 0;
   width: 100%;
+  margin-top: 1000px;
   text-align: center;
+  background-color: rgba(250, 250, 250, 0.98);
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 section {
   padding-top: 50px;
+  display: none;
 }
 
-#syllabus, #gallery, #tools {
+.menul {
   float: left;
-  --blank: calc(min(1024px, 100vw) - 425px);
+  padding-top: 15px;
+  --blank: calc(1024px - 425px);
   width: calc(var(--blank) / 6);
 }
 
-#portals, #map, #cactus {
+.menur {
   float: right;
-  --blank: calc(min(1024px, 100vw) - 425px);
+  padding-top: 15px;
+  --blank: calc(1024px - 425px);
   width: calc(var(--blank) / 6);
+}
+
+#portals, #map, #cactus, #syllabus, #gallery, #tools {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#portals:hover, #map:hover, #cactus:hover,
+#syllabus:hover, #gallery:hover, #tools:hover {
+  filter: drop-shadow(2px 2px 2px rgba(100, 100, 100, 0.5));
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .header {
   overflow: hidden;
-  background-color: rgba(250, 250, 250, 0.95);
-  position: fixed;
+  background-color: rgba(250, 250, 250, 0.98);
+  position: sticky;
   top: 0;
-  width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  width: 100vw;
+  height: 74px;
+  font-size: 10px;
+  text-align: center;
+  min-width: 320px;
 }
 
 .nav {
   align-items: center;
-  width: min(1024px, 100vw);
+  width: 1024px;
   margin: auto;
-}
-
-.menu {
-  /*padding-left: 16px;
-  padding-right: 16px;*/
-  font-size: 10px;
-  text-align: center;
-}
-
-.menu:hover {
-  filter: drop-shadow(2px 2px 2px rgba(10, 10, 10, 0.5));
-  transform: scale(1.05);
-  cursor: pointer;
+  min-width: 320px;
 }
 
 #logo {
   float: inherit;
   position: absolute;
-  top: 10px;
+  height: 55px;
+  top: 9.5px;
   left: 50%;
   transform: translate(-50%, 0);
   filter: drop-shadow(0px 4px 4px gray);
 }
 
-#dp_open, #dp_close {
-  float: inherit;
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  display: none;
-  opacity: 0;
+#logo:hover {
+  cursor: pointer;
 }
 
-@media screen and (min-width: 800px) {
-  #dp_open, #dp_close {
-    float: inherit;
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    display: none;
-    opacity: 0;
+#drp_menu {
+  float: inherit;
+  position: absolute;
+  top: 7.2px;
+  left: 3px;
+  width: 0px;
+}
+
+#drp_menu:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 1024px) and (min-width: 800px){
+  .nav {
+    width: 100vw;
+  }
+
+  .menur, .menul {
+    --blank: calc(100vw - 425px);
+    width: calc(var(--blank) / 6);
   }
 }
 
-@media screen and (max-width: 1024px) {
-  /*.menu {
-    --a: calc(100vw - 800px);
-    --b: calc(var(--a) / 224);
-    --c: calc(var(--b) * 16);
-    padding-left: var(--c);
-    padding-right: var(--c);
-  }*/
+@media screen and (max-width: 800px) { /* width <= 800px */
+  .nav {
+    width: 100vw;
+    position: absolute;
+    top: 70px;
+    margin: auto;
+  }
+
+  .menur, .menul {
+    display: inline-block;
+    width: 33.3%;
+    margin: auto;
+  }
+
+  #drp_menu {
+    width: 50px;
+  }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 500px) {
+  #logo {
+    height: 11vw;
+    --temp: calc(74px - 11vw);
+    top: calc(var(--temp) * 0.5);
+  }
+
+  #drp_menu {
+    width: 10vw;
+    height: 10vw;
+    --temp: calc(74px - 10vw);
+    top: calc(var(--temp) * 0.30);
+  }
+}
+
+@media screen and (max-width: 320px) {
   .header {
-    height: 44px;
+    width: 320px;
+  }
+
+  #logo {
+    position: absolute;
+    top: 19.4px;
+    height: 35.2px;
+    left: 160px;
+  }
+
+  #drp_menu {
+    width: 32px;
+    height: 32px;
+    top: 12.6px;
   }
 
   .nav {
-    width: 90vw;
+    width: 320px;
     position: absolute;
-    top: 80px;
-    left: 4vw;
+    top: 70px;
     margin: auto;
   }
-
-  .menu {
-    padding-left: 0;
-    padding-right: 0;
-    font-size: 11px;
-    text-align: center;
-  }
-
-  #syllabus, #gallery, #tools {
-    top: 80px;
-    display: inline-block;
-    width: 33.3%;
-    margin: auto;
-  }
-
-  #portals, #map, #cactus {
-    padding-top: 20px;
-    display: inline-block;
-    width: 33.3%;
-    margin: auto;
-  }
-
-  #dp_close {
-    display: block;
-    opacity: 1;
-  }
-
-  #dp_close:hover {
-    filter: drop-shadow(2px 2px 2px rgba(10, 10, 10, 0.5));
-    transform: scale(1.05);
-    cursor: pointer;
-  }
-
-  #dp_open:hover {
-    filter: drop-shadow(2px 2px 2px rgba(10, 10, 10, 0.5));
-    transform: scale(1.05);
-    cursor: pointer;
-  }
-
-
 }

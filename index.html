@@ -1,82 +1,125 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang='en' dir='ltr'>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <title>98-205 StuCo: Introduction to Minecraft</title>
-    <link rel="stylesheet" href="./Resources/css/index.css">
-    <link rel="icon" type="image/png" href="./Resources/grass_block_icon.png" sizes="32x32" />
-    <meta name="google-site-verification" content="3dqEAASv-MnXIPh1yaqyY7Swl6E8umM2e0w4KE12Obs" />
+    <link rel='stylesheet' href='./Resources/css/index.css'>
+    <link rel='icon' type='image/png' href='./Resources/img/grass_block_icon.png' sizes='32x32' />
+    <meta name='google-site-verification' content='3dqEAASv-MnXIPh1yaqyY7Swl6E8umM2e0w4KE12Obs' />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
   </head>
   <body>
-    <audio id="hurt">
-      <source src="./Resources/sound/player_hurt.mp3" type="audio/mpeg">
+    <audio id='hurt'>
+      <source src='./Resources/sound/player_hurt.mp3' type='audio/mpeg'>
     </audio>
     <script>
-        var x = document.getElementById("hurt");
+        let x = document.getElementById('hurt');
         function playAudio() {
           x.play();
         }
         function search(){
-            var userInput = document.getElementById("keyword").value;
+            let userInput = document.getElementById('keyword').value;
             window.open('https://minecraft.gamepedia.com/' + userInput);
         }
-        function dp_open() {
-          document.getElementById("dp_close").style.display = "none";
-          document.getElementById("dp_close").style.opacity = "0";
-          document.getElementById("dp_open").style.display = "inline";
-          document.getElementById("dp_open").style.opacity = "1";
-          document.getElementById("header").style.height = "170px";
+
+        // dropdown menu controller
+        let open = false;
+
+        function drp_handler() {
+          let image = document.getElementById('drp_menu');
+          let menu = document.getElementById('header');
+          if (open == true) {
+            image.src = './Resources/img/chest_closed.png';
+            menu.style.height = '74px';
+            open = false;
+          }
+          else {
+            image.src = './Resources/img/chest_open.png';
+            menu.style.height = '205px';
+            open = true;
+          }
         }
-        function dp_close() {
-          document.getElementById("dp_open").style.display = "none";
-          document.getElementById("dp_open").style.opacity = "0";
-          document.getElementById("dp_close").style.display = "inline";
-          document.getElementById("dp_close").style.opacity = "1";
-          document.getElementById("header").style.height = "44px";
+
+        const width = window.matchMedia('(min-width: 800px)');
+
+        function drp_collaspe(width) {
+          let image = document.getElementById('drp_menu');
+          let menu = document.getElementById('header');
+          if (width.matches) { // if width >= 800px
+            image.src = './Resources/img/chest_closed.png';
+            menu.style.height = '74px';
+            open = false;
+          }
         }
+
+        width.addListener(drp_collaspe);
+        drp_collaspe(width);
     </script>
 
 
-    <div class="header" id="header">
-      <div class="menu" id="logo">
-        <img src="./Resources/img/logo.png" height="55">
-      </div>
-      <div class="nav">
-        <div class="menu" id="syllabus">
-          <img src="./Resources/img/book_and_quill.png" height="30">
-          <br>SYLLABUS
+    <div class='header' id='header'>
+      <img id='drp_menu' src='./Resources/img/chest_closed.png' height='50px' width='50px' OnClick='drp_handler()'>
+
+      <img id='logo' src='./Resources/img/logo.png'>
+
+      <div class='nav'>
+        <div class='menul'>
+          <a id='syllabus' href='' target='_blank'>
+            <img src='./Resources/img/book_and_quill.png' height='30px'>
+            <br><span>SYLLABUS</span>
+          </a>
         </div>
-        <div class="menu" id="gallery">
-          <img src="./Resources/img/painting2.png" height="30">
-          <br>GALLERY
+        <div class='menul'>
+          <a id='gallery' href='' target='_blank'>
+            <img src='./Resources/img/painting2.png' height='30px'>
+            <br><span>GALLERY</span>
+          </a>
         </div>
-        <div class="menu" id="tools">
-          <img src="./Resources/img/diamond_pickaxe.png" height="30">
-          <br>TOOLS
+        <div class='menul'>
+          <a id='tools' href='' target='_blank'>
+            <img src='./Resources/img/diamond_pickaxe.png' height='30px'>
+            <br><span>TOOLS</span>
+          </a>
         </div>
 
-        <div class="menu" id="cactus">
-          <img src="./Resources/img/cactus.png" height="30">
-          <br>CACTUS
+        <div class='menur'>
+          <a id='cactus'>
+            <img src='./Resources/img/cactus.png' height='30px' OnClick='playAudio()'>
+            <br><span>CACTUS</span>
+          </a>
         </div>
-        <div class="menu" id="map">
-          <img src="./Resources/img/map.png" height="30">
-          <br>MAP
+
+        <div class='menur'>
+          <a id='map' href='' target='_blank'>
+            <img src='./Resources/img/map.png' height='30px'>
+            <br><span>MAP</span>
+          </a>
         </div>
-        <div class="menu" id="portals">
-          <img src="./Resources/img/nether_portal.gif" height="30">
-          <br>PORTALS
+        <div class='menur'>
+          <a id='portals' href='' target='_blank'>
+            <img src='./Resources/img/nether_portal.gif' height='30px'>
+            <br><span>PORTALS</span>
+          </a>
         </div>
       </div>
     </div>
 
+
+
+
+
+
+
+
+
+
     <section>
       <h2>Portals</h2>
-      <div class="portals">
-        <div class="portals_miscellaneous">
-          <div class = "portal">
-            <a href="https://drive.google.com/open?id=15BKsukSquUJkt_s07NCzpgsunFUFVnSa" target="_blank">
-              <img border="0" alt="homework_portal" src="./Resources/img/nether_portal.gif" width="125" height="125">
+      <div class='portals'>
+        <div class='portals_miscellaneous'>
+          <div class = 'portal'>
+            <a href='https://drive.google.com/open?id=15BKsukSquUJkt_s07NCzpgsunFUFVnSa' target='_blank'>
+              <img border='0' alt='homework_portal' src='./Resources/img/nether_portal.gif' width='125' height='125'>
             </a>
             <p><strong>*Map Download*</strong></p>
           </div>
@@ -86,64 +129,63 @@
       <hr>
 
       <h2>Videos</h2>
-      <div class="videos">
-        <div class="video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/4CAsI3ZDNNI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class='videos'>
+        <div class='video'>
+          <iframe width='560' height='315' src='https://www.youtube.com/embed/4CAsI3ZDNNI' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
         </div>
-        <div class="video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/UVysFlJK-rA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class='video'>
+          <iframe width='560' height='315' src='https://www.youtube.com/embed/UVysFlJK-rA' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
         </div>
-        <div class="video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/SbO0tqH8f5I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class='video'>
+          <iframe width='560' height='315' src='https://www.youtube.com/embed/SbO0tqH8f5I' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
         </div>
-        <div class="video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/6MN3ewCSBLI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class='video'>
+          <iframe width='560' height='315' src='https://www.youtube.com/embed/6MN3ewCSBLI' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
         </div>
-        <div class="video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/ooL9nVQA6qU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class='video'>
+          <iframe width='560' height='315' src='https://www.youtube.com/embed/ooL9nVQA6qU' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
         </div>
-        <div class="video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/fL3ejvkjxPE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class='video'>
+          <iframe width='560' height='315' src='https://www.youtube.com/embed/fL3ejvkjxPE' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
         </div>
       </div>
 
       <hr>
 
       <h2>Memes</h2>
-      <div class="memes">
-        <img src="https://i.pinimg.com/originals/54/d2/f9/54d2f902e488f603677b26b897140a20.jpg" alt="meme" height="300">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStXGB7Q-BOo9KLje4Qq4RKvsB_y4GwXzYsDL3vxQE65HmXtG-H&s" alt="meme" height="300">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNPZ2JEFM8rG-pNlvp3vYi0uMrQo7nHh0ckiTxYRFXwZVquUQenw&s" alt="meme" height="300">
-        <img src="https://pics.me.me/me-at-9pm-i-have-midterm-tomorrow-gotta-sleep-earlier-37243128.png" alt="meme" height="300">
-        <img src="https://pics.me.me/did-you-just-say-mine-41768383.png" alt="meme" height="300">
+      <div class='memes'>
+        <img src='https://i.pinimg.com/originals/54/d2/f9/54d2f902e488f603677b26b897140a20.jpg' alt='meme' height='300'>
+        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStXGB7Q-BOo9KLje4Qq4RKvsB_y4GwXzYsDL3vxQE65HmXtG-H&s' alt='meme' height='300'>
+        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNPZ2JEFM8rG-pNlvp3vYi0uMrQo7nHh0ckiTxYRFXwZVquUQenw&s' alt='meme' height='300'>
+        <img src='https://pics.me.me/me-at-9pm-i-have-midterm-tomorrow-gotta-sleep-earlier-37243128.png' alt='meme' height='300'>
+        <img src='https://pics.me.me/did-you-just-say-mine-41768383.png' alt='meme' height='300'>
       </div>
 
       <hr>
 
       <h2>Resources</h2>
-      <div class="Resources">
+      <div class='Resources'>
         <h3>Minecraft Wiki</h3>
-        <form onsubmit="search()">
-          <input type="text" placeholder="Search Minecraft Wiki ..." id="keyword">
-          <button type="submit">Search</button>
+        <form onsubmit='search()'>
+          <input type='text' placeholder='Search Minecraft Wiki ...' id='keyword'>
+          <button type='submit'>Search</button>
         </form>
-        <p>or visit Minecraft Wiki's <a href="https://minecraft.gamepedia.com/Minecraft_Wiki">website</a></p>
+        <p>or visit Minecraft Wiki's <a href='https://minecraft.gamepedia.com/Minecraft_Wiki'>website</a></p>
         <h3>YouTube</h3>
-        <form action="https://www.youtube.com/results" method="get">
-          <input name="search_query" type="text" placeholder="Search YouTube ...">
-          <button type="submit">Search</button>
+        <form action='https://www.youtube.com/results' method='get'>
+          <input name='search_query' type='text' placeholder='Search YouTube ...'>
+          <button type='submit'>Search</button>
         </form>
-        <p>or visit <a href="https://www.youtube.com">YouTube</a></p>
+        <p>or visit <a href='https://www.youtube.com'>YouTube</a></p>
         <h3>Reddit</h3>
-        <p>Visit Reddit's <a href="https://www.reddit.com/r/Minecraft/">r/Minecraft</a></p>
+        <p>Visit Reddit's <a href='https://www.reddit.com/r/Minecraft/'>r/Minecraft</a></p>
         <h3>Minecraft's Website</h3>
-        <p>Visit Minecraft's <a href="https://www.minecraft.net">website</a></p>
+        <p>Visit Minecraft's <a href='https://www.minecraft.net'>website</a></p>
       </div>
     </section>
 
     <footer>
-      <hr>
-      <p>Created by Zhengze Gong, whose <img src="./Resources/img/heart.svg" alt="heart" width="12" height="12"> is in the work</p>
+      Developed by Zhengze Gong, whose <img src='./Resources/img/heart.svg' alt='heart' width='12' height='12'> is in the work
     </footer>
   </body>
 </html>
