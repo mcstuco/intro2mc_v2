@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en' dir='ltr'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Cactus</title>
+    <link rel='stylesheet' href='./Resources/css/cactus.css'>
+    <link rel='icon' type='image/png' href='./Resources/img/grass_block_icon.png' sizes='32x32' />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <audio id='hurt'>
+      <source src='./Resources/sound/player_hurt.mp3' type='audio/mpeg'>
+    </audio>
+    <audio id='hurt2'>
+      <source src='./Resources/sound/player_hurt2.mp3' type='audio/mpeg'>
+    </audio>
+
+    <script src="./Resources/js/cactus.js"></script>
+  </head>
+  <body onload="main()">
+    <div class="health-bar">
+      <img class="heart" id="1" src="" alt="">
+      <img class="heart" id="2" src="" alt="">
+      <img class="heart" id="3" src="" alt="">
+      <img class="heart" id="4" src="" alt="">
+      <img class="heart" id="5" src="" alt="">
+      <img class="heart" id="6" src="" alt="">
+      <img class="heart" id="7" src="" alt="">
+      <img class="heart" id="8" src="" alt="">
+      <img class="heart" id="9" src="" alt="">
+      <img class="heart" id="10" src="" alt="">
+    </div>
+    <div class="difficulty">
+      <button onclick="changeDfficulty()">Change Difficulty</button>
+    </div>
+    <div id="current-difficulty">
+    </div>
+    <button onclick="hurt()">hurt</button>
+    <label class="switch" onclick="">
+      <input type="checkbox" checked>
+      <span class="slider round"></span>
+    </label>
+  </body>
+</html>
