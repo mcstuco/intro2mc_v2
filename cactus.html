@@ -17,27 +17,57 @@
     <script src="./Resources/js/cactus.js"></script>
   </head>
   <body onload="main()">
-    <div class="health-bar">
-      <img class="heart" id="1" src="" alt="">
-      <img class="heart" id="2" src="" alt="">
-      <img class="heart" id="3" src="" alt="">
-      <img class="heart" id="4" src="" alt="">
-      <img class="heart" id="5" src="" alt="">
-      <img class="heart" id="6" src="" alt="">
-      <img class="heart" id="7" src="" alt="">
-      <img class="heart" id="8" src="" alt="">
-      <img class="heart" id="9" src="" alt="">
-      <img class="heart" id="10" src="" alt="">
-    </div>
-    <div class="difficulty">
-      <button onclick="changeDfficulty()">Change Difficulty</button>
-    </div>
-    <div id="current-difficulty">
-    </div>
-    <button onclick="hurt()">hurt</button>
-    <label class="switch" onclick="">
-      <input type="checkbox" checked>
-      <span class="slider round"></span>
-    </label>
+    <section>
+      <div id="game-window">
+        <div id="game-screen">
+          <div class="cactus">
+            <img id="cactus" src='./Resources/img/cactus.png' height='100px' OnClick='hurt()'>
+          </div>
+
+          <div class="health-bar">
+            <img class="heart" id="1" src="" alt="">
+            <img class="heart" id="2" src="" alt="">
+            <img class="heart" id="3" src="" alt="">
+            <img class="heart" id="4" src="" alt="">
+            <img class="heart" id="5" src="" alt="">
+            <img class="heart" id="6" src="" alt="">
+            <img class="heart" id="7" src="" alt="">
+            <img class="heart" id="8" src="" alt="">
+            <img class="heart" id="9" src="" alt="">
+            <img class="heart" id="10" src="" alt="">
+          </div>
+
+          <div class="button">
+            <img id="difficulty-button" onmouseover="selectDifficultyButton()" onmouseout="deselectDifficultyButton()" onmousedown="changeDfficulty()" src="./Resources/img/buttons/peaceful.png" height="45px" alt="difficulty button">
+          </div>
+
+          <div class="button">
+            <img id="audio-button" onmouseover="selectAudioButton()" onmouseout="deselectAudioButton()" onmousedown="audioControl()" src="./Resources/img/buttons/audio_on.png" height="45px" alt="audio button">
+          </div>
+        </div>
+
+        <div id="death-screen">
+          <div>
+            <h1>You died!</h1>
+          </div>
+          <div id="message"></div>
+
+          <div class="button">
+            <img id="respawn-button" onmouseover="selectButton('respawn')" onmouseout="deselectButton('respawn')" onmousedown="respawn()" src="./Resources/img/buttons/respawn.png" height="45px" alt="audio button">
+          </div>
+          <div class="button">
+            <img id="done-button" onmouseover="selectButton('done')" onmouseout="deselectButton('done')" onclick="window.open('index.html', '_self');" src="./Resources/img/buttons/done.png" height="45px" alt="done button">
+          </div>
+          <div class="footer-links">
+            <a class="footer-link" href="https://github.com/harry8698/intro2mc_v2" target="_blank"> View Source</a>
+          </div>
+        </div>
+        <div id="info">
+          * Created by Zhengze Gong; images of the buttons and the cactus are created by Microsoft / Mojang
+        </div>
+      </div>
+    </section>
+
+
   </body>
 </html>

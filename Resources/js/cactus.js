@@ -4,7 +4,9 @@ hurtSound.volume = 0.5;
 let hurtSound2 = document.getElementById('hurt2');
 let difficulty = 'peaceful';
 let regenRate = 1000;
-let health = 10;
+let health = 20;
+let audioOn = true;
+let playerName = 'player';
 
 var regenTimer = setInterval(function increaseHealth() {
   if (health < 20) {
@@ -33,6 +35,8 @@ function display(n) {
 
 function changeDfficulty() {
   let difficultyDisplay = document.getElementById('current-difficulty');
+  let button = document.getElementById('difficulty-button');
+
   if (difficulty == 'peaceful') {
     difficulty = 'easy';
     regenRate = 4000;
@@ -53,22 +57,79 @@ function changeDfficulty() {
     regenRate = 1000;
     regen(regenRate);
   }
+  button.src = './Resources/img/buttons/' + difficulty + '_selected.png';
   difficultyDisplay.innerHTML = difficulty;
 }
 
+function selectDifficultyButton() {
+  let button = document.getElementById('difficulty-button');
+  button.src = './Resources/img/buttons/' + difficulty + '_selected.png';
+}
+
+function deselectDifficultyButton() {
+  let button = document.getElementById('difficulty-button');
+  button.src = './Resources/img/buttons/' + difficulty + '.png';
+}
+
+function audioControl() {
+  audioOn = !audioOn;
+  let button = document.getElementById('audio-button');
+  let fileName = audioOn ? 'audio_on' : 'audio_off';
+  button.src = './Resources/img/buttons/' + fileName + '_selected.png';
+}
+
+function selectAudioButton() {
+  let button = document.getElementById('audio-button');
+  let fileName = audioOn ? 'audio_on' : 'audio_off';
+  button.src = './Resources/img/buttons/' + fileName + '_selected.png';
+}
+
+function deselectAudioButton() {
+  let button = document.getElementById('audio-button');
+  let fileName = audioOn ? 'audio_on' : 'audio_off';
+  button.src = './Resources/img/buttons/' + fileName + '.png';
+}
+
+function selectButton(name) {
+  let button = document.getElementById(name + '-button');
+  button.src = './Resources/img/buttons/' + name + '_selected.png';
+}
+
+function deselectButton(name) {
+  let button = document.getElementById(name + '-button');
+  button.src = './Resources/img/buttons/' + name + '.png';
+}
+
 function hurt() {
-  hurtSound2.play();
-  hurtSound.play();
+  if (audioOn == true) {
+    hurtSound2.cloneNode(true).play();
+    if (health != 1) {
+      hurtSound.cloneNode(true).play();
+    }
+  }
   health--;
   display(health);
   if (health == 0) {
-    setTimeout(function deathMessage() {
-      alert('You were pricked to death');
-      health = 20;
-      display(health);
-    }, 100);
-
+    clearInterval(regenTimer);
+    setTimeout(function death() {
+      let gameScreen = document.getElementById('game-screen');
+      let deathScreen = document.getElementById('death-screen');
+      let deathMessage = document.getElementById('message');
+      gameScreen.style.display = 'none';
+      deathScreen.style.display = 'block';
+      deathMessage.innerHTML = 'You were pricked to death';
+    }, 50);
   }
+}
+
+function respawn() {
+  let gameScreen = document.getElementById('game-screen');
+  let deathScreen = document.getElementById('death-screen');
+  gameScreen.style.display = 'block';
+  deathScreen.style.display = 'none';
+  health = 20;
+  display(health);
+  regen(regenRate);
 }
 
 function regen(inteval) {
@@ -82,8 +143,7 @@ function regen(inteval) {
 }
 
 function main() {
-  let difficultyDisplay = document.getElementById('current-difficulty');
-  difficultyDisplay.innerHTML = difficulty;
-
+  let deathScreen = document.getElementById('death-screen');
+  deathScreen.style.display = 'none';
   display(health);
 }
