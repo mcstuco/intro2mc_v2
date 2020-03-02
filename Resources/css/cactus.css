@@ -57,11 +57,12 @@ body {
   padding-top: 10px;
   padding-bottom: 50px;
 }
-#info {
+#disclaimer {
   position: absolute;
   bottom: 0;
   right: 0;
-  color: rgba(250, 250, 250, 0.8);
+  font-size: 13px;
+  color: rgba(250, 250, 250, 0.6);
 }
 .footer-links {
   padding-bottom: 5px;

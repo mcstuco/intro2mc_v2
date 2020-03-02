@@ -3,56 +3,56 @@
   <head>
     <meta charset='utf-8'>
     <title>98-205 StuCo: Introduction to Minecraft</title>
-    <link rel='stylesheet' href='./Resources/css/index.css'>
     <link rel='stylesheet' href='./Resources/css/links.css'>
+    <link rel='stylesheet' href='./Resources/css/index.css'>
     <link rel='icon' type='image/png' href='./Resources/img/grass_block_icon.png' sizes='32x32' />
     <meta name='google-site-verification' content='3dqEAASv-MnXIPh1yaqyY7Swl6E8umM2e0w4KE12Obs' />
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-  </head>
-  <body>
-    <audio id='hurt'>
-      <source src='./Resources/sound/player_hurt.mp3' type='audio/mpeg'>
-    </audio>
     <script src="./Resources/js/index.js"></script>
+    <script src="./Resources/js/random_text.js"></script>
+    <script src="./Resources/js/general.js"></script>
+  </head>
+  <body onload="main()">
 
-    <div class='header' id='header'>
+
+    <div id='header'>
       <img id='drp_menu' src='./Resources/img/chest_closed.png' height='50px' width='50px' OnClick='drp_handler()'>
       <a href="/Users/gongzhengze/Library/Mobile Documents/com~apple~CloudDocs/Projects/Websites/Intro2minecraft_v2/index.html">
         <img id='logo' src='./Resources/img/logo.png'>
       </a>
       <div class='nav'>
         <div class='menul'>
-          <a id='syllabus' href='' target='_blank'>
+          <a id='syllabus-button' href='https://drive.google.com/open?id=1lkVp3z10i8HJKt6rnV4HRQ5V1Df39JLohxxDFu4zrE4' target='_blank'>
             <img src='./Resources/img/book_and_quill.png' height='30px'>
             <br><span>SYLLABUS</span>
           </a>
         </div>
         <div class='menul'>
-          <a id='gallery' href='' target='_blank'>
+          <a id='gallery-button' href='' target='' onclick='unfinishedFeature()'>
             <img src='./Resources/img/painting2.png' height='30px'>
             <br><span>GALLERY</span>
           </a>
         </div>
         <div class='menul'>
-          <a id='resources' href='' target='_blank'>
+          <a id='resources-button' href='#heading-resources'>
             <img src='./Resources/img/diamond_pickaxe.png' height='30px'>
             <br><span>RESOURCES</span>
           </a>
         </div>
         <div class='menur'>
-          <a id='cactus' href="cactus.html">
-            <img src='./Resources/img/cactus.png' height='30px' OnClick='playAudio()'>
+          <a id='cactus-button' href="cactus.html">
+            <img src='./Resources/img/cactus.png' height='30px'>
             <br><span>CACTUS</span>
           </a>
         </div>
         <div class='menur'>
-          <a id='map' href='' target='_blank'>
+          <a id='map-button' href='http://stucos20.tk/index.html' target='_blank'>
             <img src='./Resources/img/map.png' height='30px'>
             <br><span>MAP</span>
           </a>
         </div>
         <div class='menur'>
-          <a id='portals' href='' target='_blank'>
+          <a id='portals-button' href='#heading-portals' target=''>
             <img src='./Resources/img/nether_portal.gif' height='30px'>
             <br><span>PORTALS</span>
           </a>
@@ -61,28 +61,52 @@
     </div>
 
 
-
-
-
-
-
-
-
-
     <section>
-      <div class="main">
+      <div id="main">
 
-        <div class="intro_block">
-          <h3 id="intro_heading">ABOUT</h3>
-          <div class="intro_text">
+        <div id="intro-block">
+          <h3 id="intro-heading">ABOUT</h3>
+          <div id="intro-text">
             <p>This is the offical website for 98-205 <a id="intro_link_1" href="https://www.cmu.edu/stuco/" target="_blank">StuCo</a>: Introduction to Minecraft at Carnegie Mellon University. </p>
-            <p><img src="./Resources/img/emerald.png" alt="emerald" height="26px" style="vertical-align: middle;"> Consider donation <a id="intro_link_2" href="">here</a> to help us keep our server running!</p>
+            <p style="display:none"><img src="./Resources/img/emerald.png" alt="emerald" height="26px" style="vertical-align: middle;"> Consider donation <a id="intro_link_2" href="">here</a> to help us keep our server running!</p>
 
           </div>
         </div>
 
-        <h3 class="heading">VIDEOS</h3>
-        <div class="videos">
+        <h3 class="heading" id="heading-portals">PORTALS</h3>
+        <div id="portals">
+          <div id="portals_miscellaneous">
+            <div class="portal">
+              <a href="" target="_blank">
+                <img border="0" alt="homework_portal" src="./Resources/img/nether_portal.gif" width="125" height="125">
+              </a>
+              <p><strong>*Map Download*</strong></p>
+            </div>
+          </div>
+
+          <div id="portals_hw">
+            <div class="portal">
+              <a href="https://drive.google.com/open?id=1deUy0DqmAAphCRW3K39E2Q_ZVdGBIKVlb03zcADvr8M" target="_blank">
+                <img border="0" alt="homework_portal" src="./Resources/img/nether_portal.gif" width="125" height="125">
+              </a>
+              <p>HW<strong>#2</strong></p>
+            </div>
+            <div class="portal">
+              <a href="https://drive.google.com/open?id=1yHPXswQF_skG-HuG5nUCCEuMLgCMmP9oVC36beK8OxA" target="_blank">
+                <img border="0" alt="homework_portal" src="./Resources/img/nether_portal.gif" width="125" height="125">
+              </a>
+              <p>HW<strong>#1</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+        
+        <h3 class="heading" id="heading-videos">VIDEOS</h3>
+        <div id="videos">
+          <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ooL9nVQA6qU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
           <div class="video">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/qixQKU9NnE0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
@@ -98,42 +122,75 @@
 
         </div>
 
-        <p><a id='video-show-all-button' href="#">SHOW ALL</a></p>
+        <p><a id='video-show-all-button' onclick="changeVideoHeight('all')">SHOW ALL</a></p>
+        <p><a id='video-show-less-button' onclick="changeVideoHeight('less')">SHOW LESS</a></p>
 
         <hr>
 
-        <h3 class="heading">MEMES</h3>
-        <div class="memes">
+        <h3 class="heading" id="heading-memes">MEMES</h3>
+        <div id="memes">
           <img src="https://www.gamedesigning.org/wp-content/uploads/2018/03/v69.jpg" alt="meme" height="300">
           <img src="https://cdn0.kontraband.com/uploads/image/2019/7/7/preview_1d58f37b.jpeg" alt="meme" height="300">
         </div>
 
         <hr>
 
-        <h3 class="heading">RESOURCES</h3>
-        <div class="Resources">
-          <h3>Minecraft Wiki</h3>
-          <form onsubmit="search()">
-            <input type="text" placeholder="Search Minecraft Wiki ..." id="keyword">
-            <button type="submit">Search</button>
-          </form>
-          <p>or visit Minecraft Wiki's <a href="https://minecraft.gamepedia.com/Minecraft_Wiki" target="_blank">website</a></p>
-          <h3>YouTube</h3>
-          <form action="https://www.youtube.com/results" method="get">
-            <input name="search_query" type="text" placeholder="Search YouTube ...">
-            <button type="submit">Search</button>
-          </form>
-          <p>or visit <a href="https://www.youtube.com">YouTube</a></p>
-          <h3>Reddit</h3>
-          <p>Visit Reddit's <a href="https://www.reddit.com/r/Minecraft/" target="_blank">r/Minecraft</a></p>
-          <h3>Minecraft's Website</h3>
-          <p>Visit Minecraft's <a href="https://www.minecraft.net" target="_blank">website</a></p>
+
+        <h3 class="heading" id="heading-resources">RESOURCES</h3>
+        <div id="resources">
+          <div id="searchable">
+            <div class="resource">
+              <img id="minecraftwiki_logo" class="logo" src="./Resources/img/logos/minecraftwiki_logo.png" alt="Minecraft Wiki" onclick="window.open('https://minecraft.gamepedia.com/Minecraft_Wiki', '_blank');">
+              <form onsubmit="search('https://minecraft.gamepedia.com/')">
+                <input type="text" placeholder="Search Minecraft Wiki ..." id="keyword">
+                <button type="submit">Search</button>
+              </form>
+            </div>
+
+            <div class="resource">
+              <img id="youtube_logo" class="logo" src="./Resources/img/logos/youtube_logo.png" alt="Youtube" onclick="window.open('https://www.youtube.com', '_blank');">
+              <form action="https://www.youtube.com/results" method="get" target="_blank">
+                <input name="search_query" type="text" placeholder="Search YouTube ...">
+                <button type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="resource">
+            <img id="minecraftreddit_logo" class="logo" src="./Resources/img/logos/minecraftreddit_logo.png" alt="r/Minecraft" onclick="window.open('https://www.reddit.com/r/Minecraft/', '_blank');">
+            <p>r/Minecraft on Reddit</p>
+          </div>
+
+          <div class="resource">
+            <img id="mcstacker_logo" class="logo" src="./Resources/img/logos/mcstacker_logo.png" alt="MCStacker" onclick="window.open('https://mcstacker.net', '_blank');">
+            <p>Command generator</p>
+          </div>
+
+          <div class="resource">
+            <img id="skindex_logo" class="logo" src="./Resources/img/logos/skindex_logo.png" alt="Skindex" onclick="window.open('https://www.minecraftskins.com', '_blank');">
+            <p>Minecraft skins</p>
+          </div>
+
+          <div class="resource">
+            <img id="minecraft_logo" class="logo" src="./Resources/img/logos/minecraft_logo.png" alt="Minecraft" onclick="window.open('https://www.minecraft.net', '_blank');">
+            <p>Minecraft official website</p>
+          </div>
+
+          <div class="resource">
+            <img id="armorstand_logo" class="logo" src="./Resources/img/logos/armorstand_logo.png" alt="Minecraft Armor Stand" onclick="window.open('https://haselkern.com/Minecraft-ArmorStand/', '_blank');">
+            <p>Armor stand generator</p>
+          </div>
+
+          <div class="resource">
+            <img id="digminecraft_logo" class="logo" src="./Resources/img/logos/digminecraft_logo.png" alt="DigMinecraft" onclick="window.open('https://www.digminecraft.com/index.php', '_blank');">
+            <p>All about Minecraft</p>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <footer>
+    <div id='footer'>
       <div class="footer-website-information">
         <span class="footer-version">Version: BETA</span>
         <div class="footer-version-links">
@@ -145,10 +202,18 @@
         </div>
       </div>
 
+      <p>*Icon images on this page are designed by Microsoft/Mojang</p>
       <div class="footer-hr">
         <hr>
       </div>
-      <span id="footer-developer">Developed by Zhengze Gong, whose <a href="https://www.cmu.edu/about/today-we-work/index.html" target="_blank"><img id="heart" src="./Resources/img/heart.svg" alt="heart" width="12" height="12"></a> is in the work</span>
-    </footer>
+      <span id="footer-developer">
+        Developed by Zhengze Gong, whose
+        <a href="https://www.cmu.edu/about/today-we-work/index.html" target="_blank">
+          <img id="heart" src="./Resources/img/hearts/heart.svg" alt="heart" width="12" height="12">
+        </a>
+        <span id="is-text">is</span>
+         in the work
+       </span>
+    </div>
   </body>
 </html>

@@ -14,7 +14,7 @@ body {
   padding:0;
   min-width: 320px;
 }
-footer {
+#footer {
   position: relative;
   bottom: 0;
   width: 100vw;
@@ -68,14 +68,14 @@ footer {
   padding-bottom: 10px;
 }
 #heart {
-  padding-right: 2px;
+  padding-right: 5px;
   padding-left: 2px;
 }
 body {
   color: rgb(75, 75, 75);
   background-image: url("../img/night_sky.jpg");
 }
-.main {
+#main {
   text-align: center;
   letter-spacing: 0.03em;
   width: 1080px;
@@ -103,22 +103,22 @@ p {
   width: calc(var(--blank) / 6);
 }
 
-#portals, #map, #cactus, #syllabus, #gallery, #resources {
+#portals-button, #map-button, #cactus-button, #syllabus-button, #gallery-button, #resources-button {
   color: black;
   text-decoration: none;
   display: inline-block;
   letter-spacing: 0.05em;
 }
 
-#portals:hover, #map:hover, #cactus:hover,
-#syllabus:hover, #gallery:hover, #resources:hover {
+#portals-button:hover, #map-button:hover, #cactus-button:hover,
+#syllabus-button:hover, #gallery-button:hover, #resources-button:hover {
   filter: drop-shadow(2px 1px 1px rgba(100, 100, 100, 0.3));
   transform: scale(1.05);
   transition-duration: 0.3s;
   cursor: pointer;
 }
 
-.header {
+#header {
   overflow: hidden;
   background-color: rgba(245, 245, 245, 0.95);
   position: sticky;
@@ -166,13 +166,13 @@ p {
   cursor: pointer;
 }
 
-.intro_block {
+#intro-block {
   background-image: url("../img/background.jpeg");
   background-position: center;
   padding-top: 10px;
   padding-bottom: 40px;
 }
-.intro_text {
+#intro-text {
   line-height: 1.5;
   margin: auto;
   width: 500px;
@@ -181,7 +181,7 @@ p {
 #intro_link_1, #intro_link_2 {
   color: orange;
 }
-#intro_heading {
+#intro-heading {
   color: rgba(250, 250, 250, 0.8);
 }
 :root {
@@ -196,7 +196,7 @@ p {
   --videos-number-per-col: 2;
   --video-ratio: 0.5625;
 }
-.videos {
+#videos {
   --video-width-with-padding: calc(var(--videos-width) / var(--videos-number-per-row));
   --width: calc(var(--video-width-with-padding) - var(--video-padding-left-right));
   --height: calc(var(--width) * var(--video-ratio));
@@ -221,19 +221,31 @@ p {
 
   float: left;
 }
+#video-show-all-button {
+
+}
+#video-show-all-button:hover {
+  cursor: pointer;
+}
+#video-show-less-button {
+  display: none;
+}
+#video-show-less-button:hover {
+  cursor: pointer;
+}
 
 @media screen and (max-width: 1080px) and (min-width: 800px){
-  .nav, .main {
+  .nav, #main {
     width: 100vw;
   }
-  .header {
+  #header {
     transition: none;
   }
   .menur, .menul {
     --blank: calc(100vw - 425px);
     width: calc(var(--blank) / 6);
   }
-  .intro_text {
+  #intro-text {
     width: 500px;
   }
   .video {
@@ -243,13 +255,13 @@ p {
     width: var(--width);
     height: var(--height);
   }
-  .videos {
+  #videos {
     --videos-width: calc(95vw / 2);
     --width: calc(var(--videos-width) - var(--video-padding-left-right));
     --height: calc(var(--width) * 0.5625);
     --video-height-with-padding: calc(var(--height) + var(--video-padding-top-bottom));
     width: 95vw;
-    height: calc(var(--video-height-with-padding) * 2);
+    height: calc(var(--video-height-with-padding) * var(--videos-number-per-col));
   }
   .footer-hr {
     width: 95vw;
@@ -263,7 +275,7 @@ p {
     top: 70px;
     margin: auto;
   }
-  .main {
+  #main {
     width: 100vw;
   }
   .menur, .menul {
@@ -275,10 +287,10 @@ p {
   #drp_menu {
     width: 50px;
   }
-  .intro_text {
+  #intro-text {
     width: 62.5%;
   }
-  .videos {
+  #videos {
     height: 917.5px;
     width: 100vw;
   }
@@ -307,7 +319,7 @@ p {
 }
 
 @media screen and (max-width: 320px) {
-  .header, .main, footer {
+  #header, #main, #footer {
     width: 320px;
   }
   #logo {
@@ -330,37 +342,128 @@ p {
 }
 
 
-.portals {
-  display: flex;
-  align-content: flex-start;
-  overflow-x: auto;
-  white-space: nowrap;
+#portals {
+  width: 95%;
+  margin: auto;
 }
 
-.portals_miscellaneous {
-  padding-right: 30px;
+#portals_hw {
+  width: 100%;
+  margin: auto;
 }
 
-.portals_hw {
-  display: flex;
-}
-
-.portals_miscellaneous {
-  display: flex;
+#portals_miscellaneous {
+  width: 100%;
+  display: none;
 }
 
 .portal {
   text-align: center;
-  padding-right: 10px;
+  padding: 10px;
+  width: 125px;
+  float: none;
+  display: inline-block;
 }
 
+#resources {
+  width: 95%;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
+#searchable {
+  width: 100%;
+}
+
+.resource {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/*form style code from https://www.w3schools.com/howto/howto_css_search_button.asp*/
+form input[type=text] {
+  padding: 5px;
+  font-size: 13px;
+  border: 1px solid lightgrey;
+  float: left;
+  width: 65%;
+  background: white;
+}
+form button {
+  float: left;
+  width: 25%;
+  padding: 5px;
+  background: lightgray;
+  color: black;
+  font-size: 13px;
+  border: 1px solid lightgrey;
+  border-left: none;
+  cursor: pointer;
+}
+form {
+  padding-top: 10px;
+  height: 20px;
+  padding-bottom: 20px;
+}
+
+#minecraftwiki_logo {
+  height: 100px;
+}
+#youtube_logo {
+  height: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#minecraftreddit_logo {
+  height: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#minecraft_logo {
+  height: 40px;
+  padding-top: 35px;
+  padding-bottom: 25px;
+}
+#mcstacker_logo {
+  height: 90px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#armorstand_logo {
+  height: 40px;
+  padding-top: 35px;
+  padding-bottom: 25px;
+}
+#skindex_logo {
+  height: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#digminecraft_logo {
+  height: 40px;
+  padding-top: 35px;
+  padding-bottom: 25px;
+}
+
+.logo {
+  filter: opacity(0.95);
+}
+
+.logo:hover {
+  cursor: pointer;
+  filter: opacity(0.85);
+}
+
+.resource {
+  display: inline-block;
+  padding-bottom: 10px;
+}
 
 iframe {
   width: 100%;
   height: 100%;
 }
-.memes {
+#memes {
   overflow-x: auto;
   white-space: nowrap;
 }
@@ -369,6 +472,7 @@ iframe {
   display: inline-block;
   border-bottom: 4px solid black;
   line-height: 0.75em;
+  padding-top: 5px;
   padding-bottom: 0.5em;
   letter-spacing: 0.05em;
 }
