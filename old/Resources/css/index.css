@@ -1,0 +1,54 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+html {
+  min-height: 100%;
+}
+footer {
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+section {
+  min-height: 85vh;
+}
+
+.portals {
+  display: flex;
+  align-content: flex-start;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.portals_miscellaneous {
+  padding-right: 30px;
+}
+
+.portals_hw {
+  display: flex;
+}
+
+.portals_miscellaneous {
+  display: flex;
+}
+
+.portal {
+  text-align: center;
+  padding-right: 10px;
+}
+
+.videos {
+  display: flex;
+  align-content: flex-start;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.video {
+  padding-right: 20px;
+}
+
+.memes {
+  overflow-x: auto;
+  white-space: nowrap;
+}

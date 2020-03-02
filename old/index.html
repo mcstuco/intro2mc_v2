@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>98-205 StuCo: Introduction to Minecraft</title>
+    <link rel="stylesheet" href="./Resources/css/index.css">
+    <link rel="icon" type="image/png" href="./Resources/grass_block_icon.png" sizes="32x32" />
+    <meta name="google-site-verification" content="3dqEAASv-MnXIPh1yaqyY7Swl6E8umM2e0w4KE12Obs" />
+  </head>
+  <body>
+    <audio id="hurt">
+      <source src="./Resources/sound/player_hurt.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        var x = document.getElementById("hurt");
+        function playAudio() {
+          x.play();
+        }
+        function search(){
+            var userInput = document.getElementById("keyword").value;
+            window.open('https://minecraft.gamepedia.com/' + userInput);
+        }
+    </script>
+
+    <h1>Welcome to 98-205 StuCo: Introduction to Minecraft <img src="./Resources/img/cactus.png" onclick="playAudio()" alt="a cactus" width="40" height="40" onmouseover="" style="cursor: pointer;"> </h1>
+
+    <section>
+      <p>This is the offical website for <a href="https://www.cmu.edu/stuco/" target="_blank">StuCo</a>: Introduction to Minecraft at Carnegie Mellon University. </p>
+      <p>You can view the syllabus here: <a href="https://drive.google.com/open?id=1lkVp3z10i8HJKt6rnV4HRQ5V1Df39JLohxxDFu4zrE4" target="_blank">
+        <img src="./Resources/img/book_and_quill.png" alt="syllabus" width="30" height="30"></a>
+        And here is the online map for the server: <a href="http://stucos20.tk/index.html" target="_blank">
+          <img src="./Resources/img/map.png" alt="map link" width="30" height="30"></a>
+      </p>
+
+      <hr>
+
+      <h2>Portals</h2>
+      <div class="portals">
+        <div class = "portals_miscellaneous">
+          <div class = "portal" style="display:none">
+            <a href="" target="_blank">
+              <img border="0" alt="homework_portal" src="./Resources/img/nether_portal.gif" width="125" height="125">
+            </a>
+            <p><strong>*Map Download*</strong></p>
+          </div>
+        </div>
+        <div class = "portals_hw">
+          <div class = "portal">
+            <a href="https://drive.google.com/open?id=1deUy0DqmAAphCRW3K39E2Q_ZVdGBIKVlb03zcADvr8M" target="_blank">
+              <img border="0" alt="homework_portal" src="./Resources/img/nether_portal.gif" width="125" height="125">
+            </a>
+            <p>HW<strong>#2</strong></p>
+          </div>
+          <div class = "portal">
+            <a href="https://drive.google.com/open?id=1yHPXswQF_skG-HuG5nUCCEuMLgCMmP9oVC36beK8OxA" target="_blank">
+              <img border="0" alt="homework_portal" src="./Resources/img/nether_portal.gif" width="125" height="125">
+            </a>
+            <p>HW<strong>#1</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>Videos</h2>
+      <div class="videos">
+        <div class="video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/qixQKU9NnE0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/RiMlm475EgY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/frw6FFCZWDY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/oH2spzHS6gU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>Memes</h2>
+      <div class="memes">
+        <img src="https://www.gamedesigning.org/wp-content/uploads/2018/03/v69.jpg" alt="meme" height="300">
+        <img src="https://cdn0.kontraband.com/uploads/image/2019/7/7/preview_1d58f37b.jpeg" alt="meme" height="300">
+      </div>
+
+      <hr>
+
+      <h2>Resources</h2>
+      <div class="Resources">
+        <h3>Minecraft Wiki</h3>
+        <form onsubmit="search()">
+          <input type="text" placeholder="Search Minecraft Wiki ..." id="keyword">
+          <button type="submit">Search</button>
+        </form>
+        <p>or visit Minecraft Wiki's <a href="https://minecraft.gamepedia.com/Minecraft_Wiki">website</a></p>
+        <h3>YouTube</h3>
+        <form action="https://www.youtube.com/results" method="get">
+          <input name="search_query" type="text" placeholder="Search YouTube ...">
+          <button type="submit">Search</button>
+        </form>
+        <p>or visit <a href="https://www.youtube.com">YouTube</a></p>
+        <h3>Reddit</h3>
+        <p>Visit Reddit's <a href="https://www.reddit.com/r/Minecraft/">r/Minecraft</a></p>
+        <h3>Minecraft's Website</h3>
+        <p>Visit Minecraft's <a href="https://www.minecraft.net">website</a></p>
+      </div>
+    </section>
+
+    <footer>
+      <hr>
+      <p>Created by Zhengze Gong, whose <img src="./Resources/img/heart.svg" alt="heart" width="12" height="12"> is in the work</p>
+    </footer>
+  </body>
+</html>
