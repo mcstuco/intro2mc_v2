@@ -354,7 +354,7 @@ p {
 
 #portals_miscellaneous {
   width: 100%;
-  display: none;
+  margin: auto;
 }
 
 .portal {
