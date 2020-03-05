@@ -7,7 +7,12 @@
   width: device-width;
   zoom: 1.0;
 }
-
+.anchor {
+  display: block;
+  position: relative;
+  top: -74px;
+  visibility: hidden;
+}
 body {
   font-family: 'Minecraft';
   margin:0;
