@@ -134,6 +134,7 @@ p {
   text-align: center;
   min-width: 320px;
   transition: none;
+  z-index: 1;
 }
 
 .nav {
@@ -453,6 +454,7 @@ form {
 
 .logo {
   filter: opacity(0.95);
+  z-index: -1;
 }
 
 .logo:hover {
@@ -463,6 +465,7 @@ form {
 .resource {
   display: inline-block;
   padding-bottom: 10px;
+  z-index: -1;
 }
 
 iframe {
