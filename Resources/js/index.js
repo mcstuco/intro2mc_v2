@@ -6,6 +6,7 @@ function changeVideoHeight(method) {
   let rowCount = getComputedStyle(document.documentElement).getPropertyValue('--videos-number-per-row');
   let showAllButton = document.getElementById('video-show-all-button');
   let showLessButton = document.getElementById('video-show-less-button');
+  let width = window.innerWidth;
 
   videos.style.transition = '0.15s ease-out';
   setTimeout(function stop_animation() {
@@ -13,12 +14,23 @@ function changeVideoHeight(method) {
   }, 150);
 
   if (method == 'all') {
-    root.style.setProperty('--videos-number-per-col', Math.ceil(count / rowCount));
+    if (width > 800) {
+      root.style.setProperty('--videos-number-per-col', Math.ceil(count / rowCount));
+    }
+    else {
+      root.style.setProperty('--videos-number-per-col', count);
+    }
     showAllButton.style.display = 'none';
     showLessButton.style.display = 'block';
   }
   else if (method == 'less') {
-    root.style.setProperty('--videos-number-per-col', COL_COUNT_DEFAULT);
+    if (width > 800) {
+      root.style.setProperty('--videos-number-per-col', COL_COUNT_DEFAULT);
+    }
+    else {
+      let height = 4 * 230;
+      root.style.setProperty('--videos-number-per-col', COL_COUNT_DEFAULT);
+    }
     showLessButton.style.display = 'none';
     showAllButton.style.display = 'block';
   }

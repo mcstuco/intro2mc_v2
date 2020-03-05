@@ -296,7 +296,8 @@ p {
     width: 62.5%;
   }
   #videos {
-    height: 917.5px;
+    --video-height-with-padding: calc(219.375px + var(--video-padding-top-bottom));
+    height: calc(var(--video-height-with-padding) * var(--videos-number-per-col));
     width: 100vw;
   }
   .video {
