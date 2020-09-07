@@ -1,7 +1,6 @@
-
-.DS_Store
 .DS_Store
 old/.DS_Store
 Resources/.DS_Store
 Resources/img/.DS_Store
 Publish Stuco.webloc
+.gitignore
